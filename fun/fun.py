@@ -146,7 +146,7 @@ class Fun(Cog):
         """Ask 8 ball a question.
         Question must end with a question mark.
         """
-        embed = discord.Embed(title='Question: | :8ball:', description=question, color=0x2332e4)
+        embed = discord.Embed(title='Question: | :8ball:', description=question, color=self.bot.main_color)
         embed.add_field(name='Answer:', value=choice(self.ball), inline=False)
         
         if question.endswith("?") and question != "?":
@@ -201,7 +201,7 @@ class Fun(Cog):
         title = data.title
         upvotes = data.ups
         downvotes = data.downs
-        em = discord.Embed(color=ctx.author.color, title=title)
+        em = discord.Embed(color=self.bot.main_color, title=title)
         em.set_image(url=img)
         em.set_author(name=ctx.author.name, icon_url=ctx.author.avatar_url)
         em.set_footer(text=f"👍{upvotes} | 👎 {downvotes}")
